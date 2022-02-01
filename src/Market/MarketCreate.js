@@ -3,20 +3,20 @@ import { createTeacher } from '../service/MarketService'
 
 function MarketCreate() {
 
-  const [pollo, setpollo] = useState('');
-  const [pescado, setpescado] = useState('');
-  const [chancho, setchancho] = useState('');
-  const [res, setres] = useState('');
+  const [id, setid] = useState('');
+  const [username, setusername] = useState('');
+  const [password, setpassword] = useState('');
+  const [status, setstatus] = useState('');
 
 
 
   const onSubmit = (event) => {
     event.preventDefault();
     const objeto = {
-      pollo: pollo,
-      pescado: pescado,
-      chancho: chancho,
-      res: "res",
+      id: id,
+      username: username,
+      password: "password",
+      status: "status",
      
     }
     createTeacher(objeto)
@@ -24,18 +24,18 @@ function MarketCreate() {
   }
 
   const onChange = (event) =>{
-    if(event.target.name==='pollo')
+    if(event.target.name==='id')
     {
-    setpollo(event.target.value)
+    setid(event.target.value)
     }
-    if(event.target.name==='pescado')
-    setpescado(event.target.value)
+    if(event.target.name==='username')
+    setusername(event.target.value)
 
-    if(event.target.name==='chancho')
-    setchancho(event.target.value)
+    if(event.target.name==='password')
+    setpassword(event.target.value)
 
-    if(event.target.name==='res')
-    setres(event.target.value)
+    if(event.target.name==='status')
+    setstatus(event.target.value)
 
    
   }
@@ -45,35 +45,35 @@ function MarketCreate() {
       <h2>AGREGAR CARNICOS</h2>
       <form onSubmit={onSubmit}>
         <label>
-          pollo
+          id
           <input 
-            name="pollo"
-            value={pollo}
+            name="id"
+            value={id}
             onChange={onChange}
           />
         </label>
         <label>
-          pescado
+          username
           <input 
-            name="pescado"
-            value={pescado}
+            name="username"
+            value={username}
             onChange={onChange}
           />
         </label>
         <label>
-          chancho
+          password
           <input 
-            name="chancho"
-            value={chancho}
+            name="password"
+            value={password}
             onChange={onChange}
           />
         </label>
 
         <label>
-          res
+          status
           <input 
-            name="res"
-            value={res}
+            name="status"
+            value={status}
             onChange={onChange}
           />
         </label>

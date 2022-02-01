@@ -19,9 +19,9 @@ function MarketPage() {
 
   return (
     <div>
-      <h2>SUPERMERCADO "JUANCHO"</h2>
+      <h2>LISTADO DE USUARIOS</h2>
       <Link to='/createteacher' >
-        AGREGAR NUEVO PRODUCTO
+        AGREGAR NUEVO USUARIO
       </Link>
       <TeacherList>
         {

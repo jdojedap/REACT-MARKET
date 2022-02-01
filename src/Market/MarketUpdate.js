@@ -6,7 +6,7 @@ import './Market.css'
 function MarketPage() {
   
   const { teacherId } = useParams();
-  const [teacher, setTeacher] = useState({AVE:'',PEZ:'',PORCINO:'',VACUNO:''});
+  const [teacher, setTeacher] = useState({id:'',username:'',password:'',status:''});
 
   const onSubmit = (event) => {
     event.preventDefault();
@@ -16,14 +16,14 @@ function MarketPage() {
 
   }
   const onChange = (event) =>{
-    if(event.target.name==='AVE')
-      setTeacher({...teacher,AVE:event.target.value})    
-    if(event.target.name==='PEZ')    
-      setTeacher({...teacher,PEZ:event.target.value})
-    if(event.target.name==='PORCINO')
-      setTeacher({...teacher,PORCINO:event.target.value})
-    if(event.target.name==='VACUNO')    
-      setTeacher({...teacher,VACUNO:event.target.value})
+    if(event.target.name==='id')
+      setTeacher({...teacher,id:event.target.value})    
+    if(event.target.name==='username')    
+      setTeacher({...teacher,username:event.target.value})
+    if(event.target.name==='password')
+      setTeacher({...teacher,password:event.target.value})
+    if(event.target.name==='status')    
+      setTeacher({...teacher,status:event.target.value})
    
   }
 
@@ -37,39 +37,39 @@ function MarketPage() {
   return (
     <div className="boxUpdate">
       <form onSubmit={onSubmit} className="boxFormUpdate">
-      <h2>ORIGEN DE CARNES</h2>
+      <h2>cambiar datos</h2>
   
           <input 
           className="formUpdateInput"
-            name="AVE"
-            placeholder="AVE" 
-            value={teacher.AVE}
+            name="id"
+            placeholder="id" 
+            value={teacher.id}
             onChange={onChange}
    
           />
   
           <input 
            className="formUpdateInput"
-           placeholder="PEZ" 
-            name="PEZ"
-            value={teacher.PEZ}
+           placeholder="username" 
+            name="username"
+            value={teacher.username}
             onChange={onChange}
           />
         
           <input 
            className="formUpdateInput"
-           placeholder="PORCINO"
-            name="PORCINO"
-            value={teacher.PORCINO}
+           placeholder="password"
+            name="password"
+            value={teacher.password}
             onChange={onChange}
           />
            
         
         <input 
          className="formUpdateInput"
-         placeholder="RES"
-          name="RES"
-          value={teacher.RES}
+         placeholder="status"
+          name="status"
+          value={teacher.status}
           onChange={onChange}
         />
        
